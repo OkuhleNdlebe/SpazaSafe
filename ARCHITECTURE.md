@@ -129,4 +129,3 @@ flowchart TB
 ```
 
 ---
-This document provides a clear architectural overview of SpazaSafe using the **C4 model** with **Mermaid syntax**. Let me know if you need modifications! 🚀
