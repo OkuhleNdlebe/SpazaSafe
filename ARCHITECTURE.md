@@ -16,69 +16,45 @@ Spaza shops often sell expired or counterfeit products due to weak supply chain 
 Illustrates how SpazaSafe interacts with different users and external systems.
 
 ```mermaid
-C4Context
-  Person(shopOwner, "Spaza Shop Owner", "Scans QR Codes to verify products")
-  Person(consumer, "Consumer", "Checks product authenticity before purchase")
-  System(spazaSafe, "SpazaSafe System", "Ensures product authenticity and tracks supply chain")
-  Person(supplier, "Supplier", "Registers products and ensures authenticity")
-  Person(regulator, "Regulator", "Audits and verifies product compliance")
-
-  shopOwner --> spazaSafe : Scans QR Codes
-  consumer --> spazaSafe : Scans QR Codes
-  supplier --> spazaSafe : Registers Products
-  regulator --> spazaSafe : Audits Compliance
+flowchart TB
+  A[Spaza Shop Owner] -->|Scans QR Codes| B[SpazaSafe System]
+  C[Consumer] -->|Scans QR Codes| B
+  D[Supplier] -->|Registers Products| B
+  E[Regulator] -->|Audits Compliance| B
 ```
 
 ### 4.2 Container Diagram
 Breaks the system into major components (backend, frontend, database, integrations).
 
 ```mermaid
-C4Container
-  System(spazaSafe, "SpazaSafe System", "Product verification and tracking")
-  Container(webApp, "Frontend (React/Vue)", "User Interface for shops and consumers")
-  Container(backend, "Backend (Laravel API)", "Handles business logic and verification")
-  ContainerDb(database, "MySQL Database", "Stores product and shop data")
-  Container(qrAPI, "QR Code API", "Handles QR code generation and verification")
-
-  webApp --> backend : API Requests
-  backend --> database : Reads/Writes Data
-  backend --> qrAPI : QR Code Validation
+flowchart TB
+  A[Frontend (React/Vue)] -->|API Requests| B[Backend (Laravel API)]
+  B -->|Reads/Writes Data| C[MySQL Database]
+  B -->|QR Code Validation| D[QR Code API]
 ```
 
 ### 4.3 Component Diagram
 Details key components within the system.
 
 ```mermaid
-C4Component
-  Container(backend, "Backend (Laravel API)", "Handles business logic and verification")
-  Component(authService, "Authentication Service", "Manages user authentication")
-  Component(productService, "Product Verification", "Ensures products are authentic")
-  Component(deliveryService, "Delivery Tracking", "Tracks product movements")
-  Component(qrService, "QR Code Service", "Generates and verifies QR codes")
-
-  backend --> authService : User Authentication
-  backend --> productService : Product Verification
-  backend --> deliveryService : Tracks Deliveries
-  backend --> qrService : QR Code Processing
+flowchart TB
+  A[Backend (Laravel API)] -->|User Authentication| B[Authentication Service]
+  A -->|Product Verification| C[Product Verification Service]
+  A -->|Tracks Deliveries| D[Delivery Tracking Service]
+  A -->|QR Code Processing| E[QR Code Service]
 ```
 
 ### 4.4 Code Diagram (Level 4 - Code Structure)
 Defines high-level structure for Laravel application.
 
 ```mermaid
-C4Component
-  Component(laravelApp, "Laravel Application", "Handles business logic")
-  Component(authController, "Auth Controller", "Handles user authentication")
-  Component(productController, "Product Controller", "Manages product-related logic")
-  Component(qrCodeController, "QR Code Controller", "Processes QR codes")
-  Component(database, "MySQL Database", "Stores application data")
-
-  laravelApp --> authController
-  laravelApp --> productController
-  laravelApp --> qrCodeController
-  authController --> database
-  productController --> database
-  qrCodeController --> database
+flowchart TB
+  A[Laravel Application] -->|Handles user authentication| B[Auth Controller]
+  A -->|Manages product-related logic| C[Product Controller]
+  A -->|Processes QR codes| D[QR Code Controller]
+  B -->|Stores data| E[MySQL Database]
+  C -->|Stores data| E
+  D -->|Stores data| E
 ```
 
 ---
