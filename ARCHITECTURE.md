@@ -21,6 +21,7 @@ flowchart TB
   C[Consumer] -->|Scans QR Codes| B
   D[Supplier] -->|Registers Products| B
   E[Regulator] -->|Audits Compliance| B
+  B -->|Provides Authentication| C
 ```
 
 ### 4.2 Container Diagram
@@ -28,9 +29,33 @@ Breaks the system into major components (backend, frontend, database, integratio
 
 ```mermaid
 flowchart TB
-  A[Frontend (React/Vue)] -->|API Requests| B[Backend (Laravel API)]
-  B -->|Reads/Writes Data| C[MySQL Database]
-  B -->|QR Code Validation| D[QR Code API]
+  subgraph Frontend
+    A[React/Vue Web App]
+  end
+  
+  subgraph Backend
+    B[Laravel API]
+    C[Authentication Service]
+    D[Product Verification Service]
+    E[Delivery Tracking Service]
+    F[QR Code Service]
+  end
+  
+  subgraph Database
+    G[MySQL Database]
+  end
+  
+  subgraph External Services
+    H[QR Code API]
+  end
+
+  A -->|API Requests| B
+  B -->|Reads/Writes Data| G
+  B -->|QR Code Validation| H
+  B --> C
+  B --> D
+  B --> E
+  B --> F
 ```
 
 ### 4.3 Component Diagram
@@ -38,10 +63,30 @@ Details key components within the system.
 
 ```mermaid
 flowchart TB
-  A[Backend (Laravel API)] -->|User Authentication| B[Authentication Service]
-  A -->|Product Verification| C[Product Verification Service]
-  A -->|Tracks Deliveries| D[Delivery Tracking Service]
-  A -->|QR Code Processing| E[QR Code Service]
+  subgraph Backend
+    A[Laravel API]
+    B[Auth Controller]
+    C[Product Controller]
+    D[QR Code Controller]
+    E[Delivery Controller]
+  end
+  
+  subgraph Services
+    F[Authentication Service]
+    G[Product Verification Service]
+    H[QR Code Processing Service]
+    I[Delivery Tracking Service]
+  end
+  
+  A --> B
+  A --> C
+  A --> D
+  A --> E
+  
+  B --> F
+  C --> G
+  D --> H
+  E --> I
 ```
 
 ### 4.4 Code Diagram (Level 4 - Code Structure)
@@ -49,12 +94,38 @@ Defines high-level structure for Laravel application.
 
 ```mermaid
 flowchart TB
-  A[Laravel Application] -->|Handles user authentication| B[Auth Controller]
-  A -->|Manages product-related logic| C[Product Controller]
-  A -->|Processes QR codes| D[QR Code Controller]
-  B -->|Stores data| E[MySQL Database]
-  C -->|Stores data| E
-  D -->|Stores data| E
+  subgraph Laravel Application
+    A[Routes]
+    B[Controllers]
+    C[Models]
+    D[Middleware]
+    E[Services]
+    F[Database Migrations]
+  end
+  
+  subgraph Controllers
+    G[AuthController]
+    H[ProductController]
+    I[QRController]
+    J[DeliveryController]
+  end
+  
+  subgraph Services
+    K[Auth Service]
+    L[Product Service]
+    M[QR Code Service]
+    N[Delivery Service]
+  end
+  
+  A --> B
+  B --> C
+  B --> D
+  B --> E
+  E --> K
+  E --> L
+  E --> M
+  E --> N
+  C --> F
 ```
 
 ---
