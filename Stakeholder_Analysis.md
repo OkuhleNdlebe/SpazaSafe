@@ -1,0 +1,10 @@
+# Stakeholder Analysis
+
+| Stakeholder        | Role                                                       | Key Concerns                                              | Pain Points                                              | Success Metrics                                         |
+|--------------------|------------------------------------------------------------|-----------------------------------------------------------|----------------------------------------------------------|---------------------------------------------------------|
+| Shop Owners        | Manage inventory and sales in Spaza shops                  | Ensure product authenticity and quality                   | Inability to verify product authenticity                  | 90% reduction in counterfeit product sales              |
+| Environmental Health Professionals | Monitor and ensure public health safety             | Identify and remove counterfeit and expired products       | Difficulty in tracking counterfeit product sources        | 80% reduction in counterfeit product cases              |
+| Customers          | Purchase products from Spaza shops                        | Access to safe and authentic products                     | Risk of buying counterfeit or expired products            | 95% customer satisfaction with product quality          |
+| Community Leaders  | Advocate for community health and safety                  | Improve overall health and safety in the community        | Lack of awareness and education about counterfeit products | 70% increase in community awareness programs             |
+| Government Authorities | Regulate and enforce health and safety standards          | Ensure compliance with health regulations                  | Insufficient resources for monitoring and enforcement     | 50% increase in compliance rates among Spaza shops      |
+| IT Staff           | Develop and maintain the system                            | Ensure system reliability and security                    | Complexity in system integration and maintenance          | 99.9% system uptime and successful integration          |
