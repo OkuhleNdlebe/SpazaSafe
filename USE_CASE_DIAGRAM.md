@@ -1,4 +1,6 @@
-# Use Case Diagram Explanation
+# Use Case Diagram
+
+![Use Case Diagram](use_case.png)
 
 ## Key Actors and Their Roles
 
@@ -99,3 +101,4 @@
   
 - **Environmental Health Professional Concerns**: 
   - The `reportCounterfeitProduct()`, `accessEducationalResources()`, and `organizeCommunityAwarenessPrograms()` use cases help environmental health professionals identify and remove counterfeit products and educate the community, addressing their concerns about public health safety.
+
