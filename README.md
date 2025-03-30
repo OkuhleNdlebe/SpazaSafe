@@ -21,7 +21,7 @@ SpazaSafe is a software system designed to combat the sale of counterfeit and ex
 - [Challenges in Translating Requirements to Use Cases and Tests](Reflection_on_Challenges_test_cases.md)
 - [Agile Planning Document](Agile_Planning_Document.md)
 - [Template Analysis](Template_Analysis.md)
--  [Kanban Board Customization](Kanban_Board_Customerization.md)
+- [Kanban Board Customization](Kanban_Board_Customization.md)
 
 
 
