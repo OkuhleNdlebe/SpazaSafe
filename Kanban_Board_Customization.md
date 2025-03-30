@@ -34,7 +34,9 @@ By following these steps, you can create a customized Kanban board on GitHub to 
 
 ### Screenshot of Customized Kanban Board
 
-_(Include a screenshot of your customized Kanban board here with the columns, task assignments, and statuses visible)_
+![Automated Kanban Board](Kanban.PNG)
+![Automated Kanban Board](isses.PNG)
+
 
 ## Conclusion
 This customized Kanban board facilitates the effective tracking and management of tasks, ensuring clear visibility and accountability for all team members. The addition of the "Testing" and "Blocked" columns helps in aligning with QA requirements and addressing blockers promptly, thereby improving the overall efficiency of the project management process.
