@@ -22,8 +22,9 @@ SpazaSafe is a software system designed to combat the sale of counterfeit and ex
 - [Agile Planning Document](Agile_Planning_Document.md)
 - [Template Analysis](Template_Analysis.md)
 - [Kanban Board Customization](Kanban_Board_Customization.md)
--  [Kanban Board Explaination](Kanban_Board_Explanation.md)
-
+- [Kanban Board Explaination](Kanban_Board_Explanation.md)
+- [Domain Model Counterfeit System](Domain_Model_Counterfeit_System.md)
+- 
 
 ## Technologies Used
 - **Backend**: Laravel (PHP)
